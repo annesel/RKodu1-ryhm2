@@ -2,7 +2,7 @@
 title       : Vektorite loomine, elementide valik
 description : Kolmas teema - vektorid
 --- type:NormalExercise lang:r xp:100 skills:1 key:ec64c03bcd
-## Vektorid 1
+## Vektori moodustamine, tehted vektoriga
 
 - Üksikuid arve või tekstiväärtusi saab kokku panna vektoriks funktsiooni `c()` (*combine*) abil. 
 - Veel võimalusi vektorite moodustamiseks:
@@ -103,8 +103,70 @@ success_msg("Super! Liigu järgmise ülesande juurde.")
 
 
 
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:de5673cfb7
+## Funktsioonide rakendamine vektoritele
+
+Kui anname funktsiooni argumendiks vektori, siis olenevalt funktsioonist võib tulemuseks olla teisendatud väärtustega vektor või mingi kokkuvõtlik summarne näitaja/näitajad.
+
+Töölaual on temperatuurde vektor nimega `temp2`
+
+*** =instructions
+- Vaata millised väärtused  esinevad vektoris `temp2` st prindi väärtused ekraanile
+- **Ülesanne 1.** Rakenda tempratuuride vektorile funktsiooni `exp()`. Kas tulemuses on sama palju elemente kui algses vektoris? Omista oma vastus (tekst "jah" või "ei") muutujale `vastus1`.
+- **Ülesanne 2.** Rakenda tempratuuride vektorile funktsiooni `summary()`. Millisest temperatuurist on pooled temperatuuriväärtused madalamad ja pooled kõrgemad? Omista see väärtus muutujale`vastus2`. 
+- **Ülesanne 3.** Rakenda tempratuuride vektorile funktsiooni `sd()`. Kas standardhälbe väärtus tuleks negatiivne, kui temperatuuride vektoris esineks nii positiivseid kui negatiiivseid väärtuseid? Omista oma vastus (tekst "jah" või "ei") muutujale `vastus3`. 
+
+
+
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+temp2 <- c(-6.2, -12.9, -13.0, -15.4, -16.1, -16.9, -17.0, -19.6, -19.9, -24.9, -16.1)
+jaam <- c("Ruhnu", "Kihnu", "Pakri", "Tallinn", "Pärnu", "Kunda", "Kuusiku", "Võru", "Jõgeva", "Mustvee", "Keila")            
+names(temp2) <- jaam
+```
+
+*** =sample_code
+```{r}
+# prindi vektor
+temp2
+
+# Ülesanne 1: Rakenda funktsiooni exp() ja pane kirja vastus (asenda alakriips sobiva koodiga)
+____(temp2)
+vastus1 <- __________
+
+
+# Ülesanne 2: Rakenda funktsiooni summary() ja pane kirja vastus (asenda alakriips sobiva koodiga)
+____(temp2)
+vastus2 <- __________
+
+
+
+# Ülesanne 3: Rakenda funktsiooni sd() ja pane kirja vastus (asenda alakriips sobiva koodiga)
+____(temp2)
+vastus3 <- __________
+
+
+
+
+```
+
+*** =solution
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+```
 --- type:NormalExercise lang:r xp:100 skills:1 key:2c0fd8e002
-## Vektorid 2
+## Vektori alamosade selekteerimine
 
 Väga sageli on tarvis vektorist kätte saada meile hetkel vajalikku alamosa. Vaatame paari võimalust vektorist elementide välja noppimiseks. 
 

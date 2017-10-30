@@ -4,7 +4,10 @@ description : Teine teema - muutujad
 --- type:NormalExercise lang:r xp:100 skills:1 key:5baa0d5670
 ## Muutujad 
 
-R-is võivad muutujate nimed sisaldada suuri ja väikesi tähti, numbreid, punkti ja alakriipsu. Erandiks on see, et nimi ei või alata numbri või alakriipsuga. Näiteks saab omistada `x`-le väärtuse 3 järgmiselt: `x <- 3`. 
+R-is võivad muutujate nimed sisaldada suuri ja väikesi tähti, numbreid, punkti ja alakriipsu. Erandiks on see, et nimi ei või alata numbri või alakriipsuga. 
+
+
+Muutujale `x` saab  väärtuse 3 omistada järgmiselt: `x <- 3`. 
 
 **Tähtis!** R teeb vahet suurte ja väikeste tähtede vahel. Seega on `x` ja `X` kaks erinevat objekti. Samuti annab `SQRT(2)` veateate, sest ruutjuure leidmise funktsioon on `sqrt()` (väikesed tähed!).
 
