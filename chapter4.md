@@ -27,7 +27,7 @@ Tüübi kontroll, teisendamine
 *** =instructions
 
 - Vaata üle millised vektorid etteantud koodi alguses moodustatakse.
-- **Ülesanne 1**: Kontrolli, kas vektor `muutuja1` on Tõeväärtusvektor. Täienda etteantud koodi, pannes kirja kontrolliks sobiva funktsiooni nime.
+- **Ülesanne 1**: Kontrolli, kas vektor `muutuja1` on tõeväärtusvektor. Täienda etteantud koodi, pannes kirja kontrolliks sobiva funktsiooni nime.
 - **Ülesanne 2**: Rakenda funktsiooni `is.nan()` teisele moodustatud vektroile `muutuja2`. Pane tähele, et funktsiooni tulemus on ka vektor.
 - **Ülesanne 3**: Asenda vektoris `muutuja3` esimene element tühikuga, kasutades funktsiooni `is.na()` abi. Prindi muudetud vektor ekraanile.
 
@@ -51,7 +51,7 @@ muutuja1; muutuja2; muutuja3
 
 
 
-# Ülesanne 1: Kontrolli kas vektor muutuja1 on tõeväärtusvektor (asenda alakriipis sobiva sõnega, et moodustuks õige funktsiooni nimi).
+# Ülesanne 1: Kontrolli kas vektor muutuja1 on tõeväärtusvektor (asenda alakriipis sobivalt, et moodustuks õige funktsiooni nimi).
 is.______(muutuja1)
 
 # Ülesanne 2: Rakenda funktsiooni is.nan() vektorile muutuja2.

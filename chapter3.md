@@ -123,6 +123,8 @@ Töölaual on temperatuurde vektor nimega `temp2`
 
 
 *** =hint
+- Teises ülesandes peab muutujale `vastus2` omistama mediaani väärtuse.
+- Standardhälve on mittenegatiivne suurus.
 
 *** =pre_exercise_code
 ```{r}
