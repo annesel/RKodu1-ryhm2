@@ -1,130 +1,205 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
-attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+title       : R kui kalkulaator
+description : Esimene teema - kalkulaator, omistamine
+--- type:NormalExercise lang:r xp:0 skills:1 key:7483cd3c09
+## Sissejuhatus
 
----
-## A really bad movie
+Kirjuta kõigi ülesannete lahendused paremal aknapoolel olevasse *script.R* lehele, vastava ülesande sõnastuse alla. Siinses näites on esimese ülesande lahendus juba kirja pandud.
 
-```yaml
-type: MultipleChoiceExercise
-lang: r
-xp: 50
-skills: 1
-key: b2d0703ea1
-```
+Ühe vastuse väljaarvutamiseks või testimiseks pane *script.R* lehel hiirekursor vastava rea peale ja vajuta klahvikombinatsiooni `Ctrl+Enter`, 
+sellega saadetakse vastav rida allpool olevale R-i konsoolile täitmiseks. Konsooli käsurida võid ka kasutada: kirjuta käsk ning vajuta täitmiseks `Enter`-klahvi. Proovi siin ülesandes need võimalused läbi.
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+Lahenduse vihjete saamiseks vajuta nuppu `Take Hint`, aga sellega kaotad võimalikke punkte! Kui oled lahti teinud vihjed, siis võid edasi avada ka kogu lahenduse koodi, kuid nii toimides lähevad ülesande punktid nulli.
 
-`@instructions`
-- Adventure
-- Action
-- Animation
-- Comedy
+Oma vastuse esitamiseks vajuta `Submit Answer`-nuppu, siis saadetakse ülesanded kontrollimiseks. Vajuta seda nuppu siis kui oled kirja pannud **kõik** selle lehekülje ülesannete vastused.
 
-`@hint`
-Have a look at the plot. Which color does the point with the lowest rating have?
 
-`@pre_exercise_code`
+*** =instructions
+**Prooviülesanne (0 punkti):**
+
+1. Liida arvud 3 ja 4.
+2. Omista väärtus 7 muutujale `x`.
+
+
+*** =hint
+- Liitmiseks kasuta märki `+` või funktsiooni `sum`
+- Omistamiseks kasuta kombinatsiooni `<-`
+
+*** =pre_exercise_code
 ```{r}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
-
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-library(ggplot2)
-
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
+# pole midagi
 ```
 
-`@sct`
+*** =sample_code
 ```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
+# Liida
+3 + 4
 
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
+
+# Omista
 ```
 
----
-## More movies
 
-```yaml
-type: NormalExercise
-lang: r
-xp: 100
-skills: 1
-key: 38b26b368c
-```
 
-In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
-
-A dataset with a selection of movies, `movie_selection`, is available in the workspace.
-
-`@instructions`
-- Check out the structure of `movie_selection`.
-- Select movies with a rating of 5 or higher. Assign the result to `good_movies`.
-- Use `plot()` to  plot `good_movies$Run` on the x-axis, `good_movies$Rating` on the y-axis and set `col` to `good_movies$Genre`.
-
-`@hint`
-- Use `str()` for the first instruction.
-- For the second instruction, you should use `...[movie_selection$Rating >= 5, ]`.
-- For the plot, use `plot(x = ..., y = ..., col = ...)`.
-
-`@pre_exercise_code`
+*** =solution
 ```{r}
-# You can also prepare your dataset in a specific way in the pre exercise code
-load(url("https://s3.amazonaws.com/assets.datacamp.com/course/teach/movies.RData"))
-movie_selection <- Movies[Movies$Genre %in% c("action", "animated", "comedy"), c("Genre", "Rating", "Run")]
+# Liida
+3 + 4
 
-# Clean up the environment
-rm(Movies)
+# Omista
+x <- 7
+
 ```
 
-`@sample_code`
+*** =sct
 ```{r}
-# movie_selection is available in your workspace
+# esimene
+test_output_contains("3 + 4", times = 1, incorrect_msg = "Oled esimeses ülesandes õige vastuse valeks parandanud. Alusta uuesti!")
+test_student_typed("3",  not_typed_msg = "Kontrolli, kas esimese ülesande tehe on kujul `3 + 4`!")
+test_student_typed("4",  not_typed_msg = "Kontrolli, kas esimese ülesande tehe on kujul `3 + 4`!")
+ 
 
-# Check out the structure of movie_selection
-
-
-# Select movies that have a rating of 5 or higher: good_movies
-
-
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
+# teine
+test_object("x",  undefined_msg = "Vali muutuja nimeks `x`.",  incorrect_msg = "Omistasid muutujale  `x` vale väärtuse. Proovi uuesti!")
+success_msg("Tubli! Asu nüüd päris ülesandeid lahendama!")
 
 ```
 
-`@solution`
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:65ef1386ac
+## Arvutamine
+
+Esmalt mõned arvutusülesanded. 
+
+Meeldetuletuseks tehtemärgid:
+
+- Liitmine: `+`
+- Lahutamine: `-`
+- Korrutamine: `*`
+- Jagamine: `/`
+- Astendamine: `^` või `**`
+- Jääk jagamisel: `%%`
+
+ja paar funktsiooni:
+
+- Siinus: `sin()`
+- Naturaallogaritm: `log()`
+- Ruutjuur: `sqrt()`
+- Eksponentfunkstioon `exp()`
+
+**NB!** R teeb vahet suurtel ja väikestel tähtedel. Seega näiteks `sin()` ja `Sin()` viitavad erinevatele funktsioonidele.
+
+
+*** =instructions
+**Leia vastused järgmistele tehetele:**
+
+1. $25 - 1:4  + 5:9$
+
+1. $ (\sqrt{3} + 4) : 5 $
+
+1. $ (245 - 3^6)^2 $
+
+1. $ \frac{\ln{3} + 4}{55}$
+
+
+*** =hint
+- Pööra tähelepanu tehete järjekorrale.
+- Ruutjuure leidmiseks kasuta funktsiooni `sqrt()` ja naturaallogaritmi leidmiseks funktsiooni `log()`.
+
+*** =pre_exercise_code
 ```{r}
-# movie_selection is available in your workspace
+Sin <- function(x) print("Vahele jäid! Siinuse leidmiseks kasuta ikka funktsiooni sin()")
 
-# Check out the structure of movie_selection
-str(movie_selection)
-
-# Select movies that have a rating of 5 or higher: good_movies
-good_movies <- movie_selection[movie_selection$Rating >= 5, ]
-
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
-plot(good_movies$Run, good_movies$Rating, col = good_movies$Genre)
 ```
 
-`@sct`
+*** =sample_code
 ```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
+# Ülesanne 1
 
-test_function("str", args = "object",
-              not_called_msg = "You didn't call `str()`!",
-              incorrect_msg = "You didn't call `str(object = ...)` with the correct argument, `object`.")
 
-test_object("good_movies")
+# Ülesanne 2
 
-test_function("plot", args = "x")
-test_function("plot", args = "y")
-test_function("plot", args = "col")
 
-test_error()
+# Ülesanne 3
 
-success_msg("Good work!")
+
+# Ülesanne 4
+
+
 ```
+
+*** =solution
+```{r}
+# Ülesanne 1
+25 - 1/4  + 5/9
+
+# Ülesanne 2
+(sqrt(3) + 4) / 5
+
+# Ülesanne 3
+(245 - 3^6)^2 
+
+# Ülesanne 4
+(log(3) + 4) / 55
+
+
+```
+
+*** =sct
+```{r}
+# Ül 2
+#test_function_result(name = "sqrt",
+#                     index = 2,
+#                     eq_condition = "equivalent",
+#                     not_called_msg = "Esimeses ülesandes pead kasutama funktsiooni `sqrt`",
+#                     error_msg = "Esimeses ülesandes on midagi valesti!",
+#                     incorrect_msg = "Oled esimeses funktsioonile `sqrt` andnud vale väärtusega argumendi")
+
+#check_operator(state, name, index = 1, append = TRUE, not_called_msg = NULL)
+
+#test_function(name = "sqrt",
+#                     index = 1,
+#                     eq_condition = "equivalent",
+#                     not_called_msg = "Esimeses ülesandes pead kasutama funktsiooni `sqrt`",
+#                     args_not_specified_msg = "Funktsioonile `sqrt` pole antud argumendi väärtust.",
+#                     incorrect_msg = "Oled esimeses funktsioonile `sqrt` andnud vale väärtusega argumendi")
+#test_output_contains(expr = "(sqrt(3) + 4) / 5",
+#                    times = 1,
+#                    incorrect_msg = "Midagi läks valesti! Kontrolli esimese ülesande vastust.")
+ 
+ 
+#Ü1 1
+test_output_contains(expr = "25 - 1/4  + 5/9 ",
+                    times = 1,
+                    incorrect_msg = "Midagi on esimeses ülesandes valesti! Kontrolli tehete järjekorda ja tehtemärke.")
+ 
+# Ül 2
+test_output_contains(expr = "(sqrt(3) + 4) / 5",
+                    times = 1,
+                    incorrect_msg = "Midagi on teises ülesandes valesti! Kontrolli tehete järjekorda. Ruutjuure leidmiseks kasuta: `sqrt(3)`.")
+# ÜL 3
+test_output_contains(expr = "(245 - 3^6)^2 ",
+                     times = 1,
+                     incorrect_msg = "Midagi on komandas ülesandes valesti! Kontrolli tehete järjekorda. Astendamiseks kasuta märki `^` või `**`.")
+ 
+# Ül 4
+test_output_contains(expr = "(log(3) + 4) / 55",
+                     times = 1,
+                     incorrect_msg = "Midagi on viimases ülesandes valesti! Kontrolli tehete järjekorda. Naturaallogaritmi leidmiseks kasuta `log(3)`.")
+ 
+success_msg("Hästi! Mine edasi järgmise ülesande juurde.")
+
+
+```
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
