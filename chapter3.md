@@ -158,11 +158,67 @@ vastus3 <- __________
 
 *** =solution
 ```{r}
+# prindi vektor
+temp2
+
+# Ülesanne 1: Rakenda funktsiooni exp() ja pane kirja vastus (asenda alakriips sobiva koodiga)
+exp(temp2)
+vastus1 <- "jah"
+
+
+# Ülesanne 2: Rakenda funktsiooni summary() ja pane kirja vastus (asenda alakriips sobiva koodiga)
+summary(temp2)
+vastus2 <- -16.1
+
+
+
+# Ülesanne 3: Rakenda funktsiooni sd() ja pane kirja vastus (asenda alakriips sobiva koodiga)
+sd(temp2)
+vastus3 <- "ei"
+
 
 ```
 
 *** =sct
 ```{r}
+# 1
+test_function("exp", args = c("x"), index = 1,
+              eval = TRUE,
+              eq_condition = "equivalent",
+              not_called_msg = "Kasuta esimeses ülesandes  funktsiooni `exp()`!",
+              args_not_specified_msg = "Kontrolli üle millise argumendi oled funktsioonile `exp()` andnud, see peaks olema temperatuuride vektor.",
+              incorrect_msg = "Funktsiooni `exp()` tulemus on vale! Proovi uuesti.")
+test_object("vastus1", undefined_msg = "Muutujat `vastus1` pole!", incorrect_msg = "Muutuja `vastus1` väärtus on vale! Kontrolli, kas kasutad vastuse kirjapanekuks jutumärke.")
+
+
+
+
+# 2
+test_function("summary", args = c("object"), index = 1,
+              eval = TRUE,
+              eq_condition = "equivalent",
+              not_called_msg = "Kasuta teises ülesandes  funktsiooni `summary()`!",
+              args_not_specified_msg = "Kontrolli üle millise argumendi oled funktsioonile `summary()` andnud, see peaks olema temperatuuride vektor.",
+              incorrect_msg = "Funktsiooni `summary()` tulemus on vale! Proovi uuesti.")
+test_object("vastus2", undefined_msg = "Muutujat `vastus2` pole!", incorrect_msg = "Muutuja `vastus2` väärtus on vale!  ")
+
+
+
+
+# 3
+test_function("sd", args = c("x"), index = 1,
+              eval = TRUE,
+              eq_condition = "equivalent",
+              not_called_msg = "Kasuta viimases ülesandes  funktsiooni `sd()`!",
+              args_not_specified_msg = "Kontrolli üle millise argumendi oled funktsioonile `sd()` andnud, see peaks olema temperatuuride vektor.",
+              incorrect_msg = "Funktsiooni `sd()` tulemus on vale! Proovi uuesti.")
+test_object("vastus3", undefined_msg = "Muutujat `vastus3` pole!", incorrect_msg = "Muutuja `vastus3` väärtus on vale! Kontrolli, kas kasutad vastuse kirjapanekuks jutumärke.")
+
+
+
+
+success_msg("Väga tubli!")
+
 
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:2c0fd8e002
